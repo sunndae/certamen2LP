@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  web: 
+    container_name: certamen2_web
+
+    build: .
+
+    command: python3 manage.py runserver 0.0.0.0:8080
+
+    volumes: 
+      - .:/app/
+
+    ports: 
+      - 8080:8080
+    
+    depends_on:
+      - db
+  
+  db:
+    container_name: certamen2_db
+    image: postgres:14
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: TsolarC
+      POSTGRES_DB: certamen2DB
+      POSTGRES_PASSWORD: CesarDegenerado_1917.
+
+networks:
+  default: 
+    name: certamen2_network

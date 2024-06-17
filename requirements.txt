@@ -1,1 +1,4 @@
 Django
+dj-database-url
+psycopg2
+djangorestframework

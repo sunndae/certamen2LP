@@ -1,0 +1,5 @@
+db.sqlite3
+
+*.pyc
+
+certamen2LP/__pycache__/settings.cpython-310.pyc
