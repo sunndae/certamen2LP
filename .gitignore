@@ -3,3 +3,4 @@ db.sqlite3
 *.pyc
 
 certamen2LP/__pycache__/settings.cpython-310.pyc
+certamen2LP/__pycache__/urls.cpython-310.pyc
