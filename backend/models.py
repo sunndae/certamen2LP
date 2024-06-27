@@ -7,3 +7,8 @@ class Number(models.Model):
     letter = models.CharField()
 
     
+class Pokemon(models.Model):
+    nombre = models.CharField(max_length=20)
+    numero_Pokedex = models.IntegerField()
+    tipo_primario = models.CharField(max_length=15)
+    tipo_secundario = models.CharField(max_length=15, null=True, blank=True)
