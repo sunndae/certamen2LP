@@ -12,3 +12,4 @@ class Pokemon(models.Model):
     numero_Pokedex = models.IntegerField()
     tipo_primario = models.CharField(max_length=15)
     tipo_secundario = models.CharField(max_length=15, null=True, blank=True)
+    url_imagen = models.CharField(max_length = 1000)

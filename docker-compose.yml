@@ -27,6 +27,20 @@ services:
       POSTGRES_DB: certamen2DB
       POSTGRES_PASSWORD: CesarDegenerado_1917.
 
+  react:
+    container_name: certamen2_react
+    build:
+      context: .
+      dockerfile: react.Dockerfile
+    command: npm start
+    volumes:
+      - ./react:/app
+    ports:
+      - 3000:3000
+
+
+
+
 networks:
   default: 
     name: certamen2_network
