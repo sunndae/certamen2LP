@@ -2,13 +2,12 @@ FROM node:18
 
 WORKDIR /app
 
-COPY ./react/package*.json ./
+COPY ./certamen2_react/package*.json ./certamen2_react/package-lock.json* ./
 
 RUN npm install 
 
 COPY . .
 
-# Comando para ejecutar la aplicación
 CMD ["npm", "start"]
 
 

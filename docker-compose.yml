@@ -34,7 +34,7 @@ services:
       dockerfile: react.Dockerfile
     command: npm start
     volumes:
-      - ./react:/app
+      - ./certamen2_react:/app
     ports:
       - 3000:3000
 
