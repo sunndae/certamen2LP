@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <div className="background"></div> {/* Capa de fondo */}
       <div className="container"> {/* Contenedor para el contenido */}
-        <h1 className="title">Random Pokemons</h1>
+        <h1 className="title">Certamen 2 LP: Tomás Solar</h1>
         <ul className="pokemonList">
           {pokemons.map(pokemon => (
             <li key={pokemon.numero_Pokedex} className="pokemonItem">
