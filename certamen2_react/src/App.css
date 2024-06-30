@@ -1,38 +1,71 @@
-.App {
-  text-align: center;
+/* Estilos globales */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Capa de fondo con imagen */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('https://c.wallhere.com/photos/47/e6/topography_black_modern_dark_dark_background_monochrome-2235350.jpg!d');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  z-index: -10; /* Asegúrate de que está detrás de todo el contenido */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Contenedor principal para el contenido */
+.container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
+  z-index: 10; /* Asegurarse de que el contenido esté sobre el fondo */
+  color: black; /* Color de texto para mejor contraste */
+  text-align: center; /* Centrar el texto */
 }
 
-.App-link {
-  color: #61dafb;
+.title {
+  font-size: 2rem;
+  color: white; /* Cambiar el color de título a blanco */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pokemonList {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px; /* Espaciado superior para la lista */
+}
+
+.pokemonItem {
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparencia */
+  margin-bottom: 10px; /* Espaciado entre items */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.pokemonImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Circular */
+  margin-bottom: 10px; /* Espaciado debajo de la imagen */
+}
+
+.footerTitle {
+  position: absolute;
+  right: 10px;  /* Ajuste de la posición derecha */
+  bottom: 10px; /* Ajuste de la posición inferior */
+  font-size: 1.5rem;
+  color: white; /* Color de texto para el título en el pie de página */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }

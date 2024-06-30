@@ -21,6 +21,7 @@ from django.urls import path, include
 
 from backend.views import *
 from backend.views import NumberViewSet, CreateRandomNumber
+from backend.views import random_pokemon_view
 
 from rest_framework.routers import DefaultRouter
 
@@ -31,5 +32,5 @@ urlpatterns = [
     path('', include(router.urls)),
     path('random/', CreateRandomNumber.as_view(), name='create_random_number'),
     path('admin/', admin.site.urls),
-
+    path('api/random-pokemons/', random_pokemon_view, name='random-pokemons'),
 ]

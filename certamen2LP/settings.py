@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'backend',
-    'rest_framework'
+    'rest_framework',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -50,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'certamen2LP.urls'
@@ -82,6 +84,8 @@ DATABASES = {
     'default': dj_database_url.config(default ='postgres://TsolarC:CesarDegenerado_1917.@certamen2_db:5432/certamen2DB')
 
 }
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 # Password validation

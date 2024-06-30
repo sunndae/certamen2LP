@@ -3,6 +3,7 @@ from rest_framework import viewsets, generics
 from backend.models import Number, Pokemon
 from backend.serializers.NumberSerializer import NumberSerializer
 from backend.serializers.PokemonSerializer import PokemonSerializer
+from django.http import JsonResponse
 
 import random 
 import string 
@@ -35,3 +36,18 @@ class CreateRandomNumber(generics.CreateAPIView):
         random_letter = random.choice(string.ascii_uppercase)
 
         serializer.save(number = random_number, letter = random_letter)
+
+
+def random_pokemon_view(request):
+    pokemons = list(Pokemon.objects.all())
+    random_pokemons = random.sample(pokemons, 2) if len(pokemons) >= 2 else pokemons
+
+    data = [{
+        'nombre': pokemon.nombre,
+        'numero_Pokedex': pokemon.numero_Pokedex,
+        'tipo_primario': pokemon.tipo_primario,
+        'tipo_secundario': pokemon.tipo_secundario or "N/A",
+        'url_imagen': pokemon.url_imagen  # Incluir la URL de la imagen
+    } for pokemon in random_pokemons]
+
+    return JsonResponse(data, safe=False)
